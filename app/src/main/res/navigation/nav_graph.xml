@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Asosiy oyna"
+    app:startDestination="@id/hom_Fragment">
+
+    <fragment
+        android:id="@+id/hom_Fragment"
+        android:name="com.example.a621.Hom_Fragment"
+        android:label="Asosiy oyna"
+        tools:layout="@layout/fragment_hom">
+        <action
+            android:id="@+id/action_hom_Fragment_to_contaktFragment"
+            app:destination="@id/contaktFragment"
+            app:popUpTo="@id/hom_Fragment" />
+        <action
+            android:id="@+id/action_hom_Fragment_to_addContactFragment"
+            app:destination="@id/addContactFragment"
+            app:popUpTo="@id/hom_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contaktFragment"
+        android:name="com.example.a621.ContaktFragment"
+        android:label="Barcha kontaktlar"
+        tools:layout="@layout/fragment_contakt" />
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.example.a621.AddContactFragment"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/fragment_add_contact" />
+</navigation>
