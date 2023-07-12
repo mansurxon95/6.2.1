@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.example.a621.adapters.ContactAdapter
 import com.example.a621.databinding.FragmentContaktBinding
+import com.example.a621.db.MyDB
+import com.example.a621.models.Contact
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,8 +43,17 @@ class ContaktFragment : Fragment() {
     ): View? {
     binding =  FragmentContaktBinding.inflate(layoutInflater,container,false)
 
+        var mydb = MyDB(binding.root.context)
+        val getallcontact = mydb.getallcontact()
+        val adapter = ContactAdapter(getallcontact, object : ContactAdapter.OnClik{
+            override fun click(contact: Contact, position: Int) {
+                
+            }
+        })
 
-    return binding.root
+        binding.rvContact.adapter = adapter
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

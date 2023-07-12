@@ -29,5 +29,11 @@
         android:id="@+id/addContactFragment"
         android:name="com.example.a621.AddContactFragment"
         android:label="fragment_add_contact"
-        tools:layout="@layout/fragment_add_contact" />
+        tools:layout="@layout/fragment_add_contact" >
+        <action
+            android:id="@+id/action_addContactFragment_to_hom_Fragment"
+            app:destination="@id/hom_Fragment"
+            app:popUpTo="@id/addContactFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
