@@ -46,10 +46,12 @@ class AddContactFragment : Fragment() {
         var myDB = MyDB(binding.root.context)
 
         binding.btn.setOnClickListener {
+            if (binding.name.text.toString().isNotEmpty()&&binding.number.text.toString().isNotEmpty()){
             myDB.addcontact(Contact(binding.name.text.toString(),binding.number.text.toString()))
 
             Toast.makeText(binding.root.context, "Kontakt saqlandi", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addContactFragment_to_hom_Fragment)
+            }else Toast.makeText(binding.root.context, "Barcha maydonlarni to'ldirish shart", Toast.LENGTH_SHORT).show()
         }
 
 
